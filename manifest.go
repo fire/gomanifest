@@ -19,7 +19,7 @@ func visit(path string, f os.FileInfo, err error) error {
         log.Printf("Error: %s", err)
 		return err;
 	}
-	h.Name = path
+	h.Name = filepath.ToSlash(path)
 	//log.Println(string(b))
 	manifest = append(manifest, h)
 	return nil
